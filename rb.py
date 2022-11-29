@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python1.10
 import os
 import sys
 import math
@@ -229,5 +229,8 @@ def process_arguments(arguments):
     
     return arguments, get_help, force, max_mib, recycle_bin
 
-if __name__ == '__main__' and not platform.system() == "Windows":
-    main()
+if __name__ == '__main__':
+    if not platform.system() == "Windows":
+        main()
+    else:
+        print(f"{sys.argv[0]} doesn't run on {platform.system()}.")
