@@ -1,7 +1,8 @@
-# rb
+<img src="rb.png">
+
 A Windows-like recycle bin system for Unix-like systems.
 
-## Flags
+# Flags
 - -f, --force
 
         Invoke a recycle bin bypass. All files listed using this flag are deleted and NOT placed in your recycle bin.
