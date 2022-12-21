@@ -1,32 +1,42 @@
-<img src="rb.png">
+# <img src="rb.png">
 
-A Windows-like recycle bin system for Unix-like systems.
+## Summary
+`rb` is a python program that provides a "recycle bin" functionality, allowing the user to move files and directories to a designated recycle bin folder, rather than permanently deleting them. `rb` takes in a list of arguments, including file and directory paths, and options such as `--help`, `--force`, and `--max-mib`. It processes these arguments and then performs actions on the specified files and directories, such as moving them to the recycle bin, renaming them if necessary to avoid conflicts, and deleting them if the `--force` option is provided. `rb` also has the ability to handle large files, and will prompt the user to confirm the deletion of files that exceed a specified maximum size (in mebibytes) if the `--force` option is not provided.
 
-# Flags
-- -f, --force
+## Features
+- Allows you to move files and directories to a recycle bin
+- Provides command-line arguments for various options and actions
+- Prevents the recycle bin from exceeding a specified maximum size in MiB
+- Handles conflicts when moving items with the same name to the recycle bin
 
-        Invoke a recycle bin bypass. All files listed using this flag are deleted and NOT placed in your recycle bin.
+## Usage
+To use `rb`, simply run it from the command line with the desired options and the paths of the items to be recycled.
 
-        Example:
-            rb.py -f file1 dir1
+Here is an example of how to move a file to the recycle bin:
 
-- -rb, --recycle-bin
+    python rb.py file.txt
 
-        Manually specify a recycle bin path.
+You can also specify multiple items to be recycled at once:
 
-        Example:
-            rb.py -rb ~/tempbin/
-        
-        Default:
-            ~/rb/
+    python rb.py file1.txt file2.txt directory/
 
-- -h, --help
+## Options
+`rb` supports the following command-line options:
 
-        Display help information.
+- `--help`: Displays usage information and a list of options
+- `--force`: Forces the removal of items without prompting for confirmation
+- `--max-mib`: Sets the maximum size of the recycle bin in MiB
+- `--recycle-bin`: Sets the path of the recycle bin directory
 
-- -m, --max-mib
+## Recovery
+To recover an item from the recycle bin, simply navigate to the recycle bin directory and move the item back to its original location.
 
-        Specify the max MiB file or directory your recycle bin will hold.
+## Deletion
+To permanently delete an item from the recycle bin, you can use the --force option:
 
-        Default:
-            20000000000 (20000 MiB)
+    python rb.py --force file.txt
+
+Alternatively, you can manually delete the item from the recycle bin using your system's file management tools.
+
+## Requirements
+This program requires Python 3.10 or higher to run. It also requires the `uuid`, `json`, and `shutil` modules to be installed.
