@@ -37,6 +37,3 @@ To permanently delete an item from the recycle bin, you can use the --force opti
     python rb.py --force file.txt
 
 Alternatively, you can manually delete the item from the recycle bin using your system's file management tools.
-
-## Requirements
-This program requires Python 3.10 or higher to run. It also requires the `uuid`, `json`, and `shutil` modules to be installed.
